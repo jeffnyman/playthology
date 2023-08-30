@@ -27,6 +27,8 @@ class StoryGame : object
     "Story game has begun ...\n";
 
     showIntro();
+
+    showLeaving();
   }
 
   /*
@@ -36,4 +38,13 @@ class StoryGame : object
   context, this would likely set up the initial situation for the player.
   */
   showIntro() {}
+
+  /*
+  This method is used to show a message as the player is leaving the
+  story. However, this is not really an "in story" sort of message but
+  rather a closing statement for the player. An empty method is defined
+  in order to allow for the hook but any specific project will want to
+  override this if there is a parting message for the player.
+  */
+  showLeaving() {}
 ;
