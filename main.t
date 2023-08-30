@@ -39,4 +39,14 @@ startStory() {
   actor, such as a non-player character.
   */
   gActor = gPlayerCharacter;
+
+  /*
+  The command loop must be started. This is the core operating logic of
+  the story.
+  */
+  commandLoop();
+}
+
+commandLoop() {
+  "Entering the command loop ...";
 }
