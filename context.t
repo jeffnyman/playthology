@@ -65,6 +65,8 @@ class StoryGame : object
 
     showIntro();
 
+    startStory();
+
     showLeaving();
   }
 

@@ -26,3 +26,17 @@ mainCommon(func, [args]) {
   */
   storyStart.(func)(args...);
 }
+
+/*
+This function matches the runGame() method in the standard TADS 3 library
+implementations. 
+*/
+startStory() {
+  /*
+  When the story starts, the actor who will be performing the current
+  command will be the player character. This must be the case since this
+  is the starting action of the story, which cannot be directed to another
+  actor, such as a non-player character.
+  */
+  gActor = gPlayerCharacter;
+}
