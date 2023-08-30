@@ -17,6 +17,12 @@ libContext : object
   what that reference is, so it's set to nil by default.
   */
   currentPlayerCharacter = nil
+
+  /*
+  The concept of the "current actor" refers to whatever actor-based object
+  is performing the current command.
+  */
+  currentActor = nil
 ;
 
 libPreinit : PreinitObject
@@ -43,11 +49,19 @@ logic but just using more domain relevant naming.
 */
 class StoryGame : object
   /*
+  This is a reference to the object that will be the player character. The
+  author must provide this reference as part of the startStory implementation.
+  */
+  startingProtagonist = nil
+
+  /*
   This is a default implementation for how a story begins. An author can
   override this method if they want to customize how the story begins.
   */
   begin() {
     "Story game has begun ...\n";
+
+    gActor = startingProtagonist;
 
     showIntro();
 

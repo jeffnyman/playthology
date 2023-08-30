@@ -13,4 +13,11 @@ reference to this object is held by the library context.
 */
 #define gPlayerCharacter (libContext.currentPlayerCharacter)
 
+/*
+The following function macro is used to reference the specific actor that is
+performing the current command. That may very well be the player character
+but it can be any non-player character as well.
+*/
+#define gActor (libContext.currentActor)
+
 #endif
