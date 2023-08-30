@@ -10,6 +10,25 @@ same context.
 */
 libContext : object
   cliArgs = []
+
+  /*
+  There must be some reference to a current player character since that is
+  what the player of the story controls. However, the library cannot state
+  what that reference is, so it's set to nil by default.
+  */
+  currentPlayerCharacter = nil
+;
+
+libPreinit : PreinitObject
+  execute() {
+    /*
+    The global macro that holds a reference to a player character object
+    is set to whatever the author has specified in their required storyStart
+    as the protagonist object. The reference here is to a protagonist of the
+    story, thus abstracting away a bit the notion of a player character.
+    */
+    gPlayerCharacter = storyStart.startingProtagonist;
+  }
 ;
 
 /*
