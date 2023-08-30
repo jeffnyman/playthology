@@ -3,4 +3,6 @@
 
 main(args) {
   "Playthology Library\n";
+
+  libContext.cliArgs = args;
 }
