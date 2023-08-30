@@ -23,6 +23,10 @@ then define that as an instance of GameMainDef. I'm doing the same basic
 logic but just using more domain relevant naming.
 */
 class StoryGame : object
+  /*
+  This is a default implementation for how a story begins. An author can
+  override this method if they want to customize how the story begins.
+  */
   begin() {
     "Story game has begun ...\n";
 
