@@ -25,5 +25,15 @@ logic but just using more domain relevant naming.
 class StoryGame : object
   begin() {
     "Story game has begun ...\n";
+
+    showIntro();
   }
+
+  /*
+  This method is used to show introduction content for the project. An
+  empty method is defined here because projects will want to override this
+  for introductory aspects specific to the project in question. In a story
+  context, this would likely set up the initial situation for the player.
+  */
+  showIntro() {}
 ;
