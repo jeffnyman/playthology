@@ -68,11 +68,53 @@ inputHandler : object
       case where the timeout is nil, this call will act like the standard
       untimed input line handler.
       */
+    getInput:
       result = pioInputLineTimeout(timeout);
+
+      /*
+      The event code returned from the result list has to be matched. These
+      are the codes that will be returned by the tads-io inputLineTimeout()
+      function.
+
+      In the case of InEvtNoTimeout, this means the environment that the
+      program is is executing in doesn't support timeouts.
+
+      In the case of InEvtLine, this just means that a line of input was
+      successfully read from the keyboard.
+
+      In the case of InEvtTimeout, this means a timeout occurred without
+      the input line being finished. Put another way, a timeout interval was
+      specified and it expired before the user finished editing the command
+      they were entering.
+
+      In the case of InEvtEof, this either means that there was some error
+      reading from the keyboard or that the program itself is terminating.
+      */
+      switch (result[1]) {
+        case InEvtNoTimeout:
+          tadsSay('InEvtNoTimeout'); // REMOVE
+          timeout = nil;
+          goto getInput;
+
+        case InEvtLine:
+          tadsSay('InEvtLine'); // REMOVE
+          inputLineEnd();
+
+          return result[2];
+
+        case InEvtTimeout:
+          tadsSay('InEvtTimeout'); // REMOVE
+          break;
+
+        case InEvtEof:
+          tadsSay('InEvtEof'); // REMOVE
+          throw new EndOfLifeException();
+      }
     }
   }
 
   inputLineStart(context) {}
+  inputLineEnd() {}
 ;
 
 /*
