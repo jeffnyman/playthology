@@ -6,6 +6,10 @@ One of the biggest challenges is that as you read code, you can't actually tell 
 
 Adding to the complication, the Adv3Lite library changed a lot of material from Adv3 but kept the same comments in place. So if you use Adv3 as the basis for your work, the comments are entirely non-helfpul in many cases and, in fact, don't reflect the code.
 
+Yet another complication is that Adv3 library uses a lot of terminology in its comments that are not really covered in the TADS 3 documentation at all. Overall, there is an extreme lack of useful context in how the original library was constructed. Libraries like Adv3Lite, as mentioned above, really just took in these same comments -- even when they no longer applied due to code changes -- and simply perpetuated the obfuscation.
+
+In short, a lot of code archaeology is required if you want to build something on top of TADS 3. It makes it a challenge and fun -- and sometimes frustrating -- exercise.
+
 ----
 
 A challenge for handling input is two-fold:
