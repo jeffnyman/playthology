@@ -57,7 +57,18 @@ inputHandler : object
     been fully read.
     */
     for (;;) {
+      local result;
+      local timeout;
+
       inputLineStart(context);
+
+      /*
+      Here a call is made to Playthology's specific handler for input line
+      timeouts. It's worth noting that there is no default timeout so in the
+      case where the timeout is nil, this call will act like the standard
+      untimed input line handler.
+      */
+      result = pioInputLineTimeout(timeout);
     }
   }
 
