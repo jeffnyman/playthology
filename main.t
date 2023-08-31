@@ -1,6 +1,14 @@
 #charset "utf-8"
 #include "playthology.h"
 
+/*
+This is the primary entry point function that is required for any TADS 3
+program. This function is called by the system library, specifically the
+_main.t module. That particular module, as opposed to the entire system
+library, is included by default in all TADS 3 compiled programs. The only
+way that isn't the case is if the program is compiled with a "-nodef"
+option.
+*/
 main(args) {
   "Playthology Library\n";
 
@@ -27,6 +35,11 @@ mainRestore(args, restoreState) {
   mainCommon(&beginAfterRestore, restoreState);
 }
 
+/*
+Any entry point functions can delegate to this common handler which will
+make sure that the program can be started regardless of the entry point
+function that was specifically called.
+*/
 mainCommon(func, [args]) {
   /*
   This storyStart is another interesting part. It doesn't actually exist
