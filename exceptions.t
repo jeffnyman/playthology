@@ -12,3 +12,10 @@ responding in its environment. This could be due to the immediate
 absence of input mechanisms or to the program itself terminating.
 */
 class EndOfLifeException : Exception;
+
+/*
+When the parser encounters an error that makes it impossible to go any
+further processing a command, this exception is thrown to abandon the
+current command and proceed to the next.
+*/
+class TerminateCommandException : Exception;

@@ -88,12 +88,31 @@ commandLoop() {
 
   local playerCommand;
 
-  /*
-  The first step is to read a command from the keyboard interface. This
-  is a command that the player would have specified at the command line
-  within the program.
-  */
-  playerCommand = inputHandler.readInputLine();
+  do {
+    try {
+     /*
+      The first step is to read a command from the keyboard interface. This
+      is a command that the player would have specified at the command line
+      within the program.
+      */
+      playerCommand = inputHandler.readInputLine();
 
-  playerCommand = CommandPreParser.runAll(playerCommand, Parser.scType());
+      playerCommand = CommandPreParser.runAll(playerCommand, Parser.scType());
+      tadsSay(playerCommand); // REMOVE
+
+      /*
+      If the player command is nil, that means one of the command preparsers
+      has fully dealt with the command. This means that the command loop can
+      be continued.
+      */
+      if (playerCommand == nil) {
+        continue;
+      }
+    } catch (TerminateCommandException exc) {
+      /*
+      This exception indicates a syntax error or semantic resolution error
+      that renders the command meaningless or makes it impossible to proceed.
+      */
+    }
+  } while (true);
 }
