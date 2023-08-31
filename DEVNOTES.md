@@ -12,3 +12,9 @@ A challenge for handling input is two-fold:
 - TADS can interleave command-line input and real-time input.
 
 All of this is documented extremely poorly in the official TADS documentation.
+
+----
+
+A challenge in general is that the virtual machine of TADS 3 has a series of persistence mechanisms. These are around the features of saving, restoring and restarting a game. (Also included is the ability to undo an action.) The idea is that whole sets of objects can outlive a particular session of the virtual machine.
+
+Just about everything is persistent but anything _not_ persistent is called transient. Transient objects essentially only last for the current session of the virtual machine but, crucially, they do not get changed during restore or undo operations, unlike persistent objects. 
