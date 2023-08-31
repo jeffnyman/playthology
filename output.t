@@ -78,3 +78,20 @@ class OutputFilter : object
     return displayText;
   }
 ;
+
+/*
+This is the base case for handling paragraphs. This is derived from the
+base output filtering class and the goal of this subclass is to filter
+strings as they are sent to the display interface but specifically around
+handling what are called "paragraph markers."
+*/
+class ParagraphHandler : OutputFilter
+;
+
+/*
+This is the primary handler for story paragraphs. There is no direct
+implementation required here. However, this subclass is defined as
+being transient since it is relevant to any display context in the
+current session, which should extend over save and restore operations.
+*/
+transient storyParagraphHandler : ParagraphHandler;

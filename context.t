@@ -34,6 +34,12 @@ libPreinit : PreinitObject
     story, thus abstracting away a bit the notion of a player character.
     */
     gPlayerCharacter = storyStart.startingProtagonist;
+
+    /*
+    The following logic applies output filters to the primary story output
+    stream.
+    */
+    storyOutputStream.applyFilter(storyParagraphHandler);
   }
 ;
 
