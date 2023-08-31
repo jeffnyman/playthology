@@ -37,3 +37,14 @@ class OutputStream : PreinitObject
     filterList = new transient Vector(10);
   }
 ;
+
+/*
+This is the output stream for the primary text area of the game. This
+is the area where the player receives information about the story world
+and gets updates to that story world based on their actions in it. This
+object must be transient because the output stream is part of the user
+interface being driven by the interpreter as part of the current session.
+This interface is thus not impacted by save and restore operations.
+*/
+transient storyOutputStream : OutputStream
+;
