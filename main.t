@@ -41,15 +41,26 @@ make sure that the program can be started regardless of the entry point
 function that was specifically called.
 */
 mainCommon(func, [args]) {
-  /*
-  This storyStart is another interesting part. It doesn't actually exist
-  in the context of the library. This is an object that the author must
-  create as part of their project. This object must be an instance of a
-  class that *is* in this library and that defines the `func` that was
-  passed in. Although, given how TADS works, if the function does not
-  exist on the object, nothing bad will happen.
-  */
-  storyStart.(func)(args...);
+  try {
+    /*
+    This storyStart is another interesting part. It doesn't actually exist
+    in the context of the library. This is an object that the author must
+    create as part of their project. This object must be an instance of a
+    class that *is* in this library and that defines the `func` that was
+    passed in. Although, given how TADS works, if the function does not
+    exist on the object, nothing bad will happen.
+    */
+    storyStart.(func)(args...);
+  } catch (QuittingException exc) {
+    /*
+    This indicates that the player has explicitly tried to quit the program.
+    A return from this function will take the execution back to the entry
+    point function. Since there should be no other logic in the entry point
+    after calling this function, the program will return from that entry
+    point, which effectively ends the program.
+    */
+  }
+  
 }
 
 /*
