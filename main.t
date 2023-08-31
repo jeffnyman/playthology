@@ -94,4 +94,6 @@ commandLoop() {
   within the program.
   */
   playerCommand = inputHandler.readInputLine();
+
+  playerCommand = CommandPreParser.runAll(playerCommand, Parser.scType());
 }

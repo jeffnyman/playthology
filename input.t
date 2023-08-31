@@ -63,3 +63,39 @@ inputHandler : object
 
   inputLineStart(context) {}
 ;
+
+/*
+This is the base class for pre-parsing that is performed on any input
+command. All preparsers have to be registered. Only registered preparers
+will actually execute.
+
+This class is also a preinit style object which means that, during the
+pre-initialization phase, the execute() method on each instance of this
+class will be invoked. In this case, the base preparser registers itself.
+*/
+class CommandPreParser : PreinitObject
+  /*
+  The registered list is a class property that contains a list of all the
+  registered preparsers. This must be defined as static because it should
+  not change after the program has started running.
+  */
+  registeredList = static new Vector(10)
+
+  execute() {
+    CommandPreParser.registerPreParser(self);
+  }
+
+  registerPreParser(parser) {
+    if (registeredList.indexOf(parser) == nil) {
+      registeredList.append(parser);
+    }
+  }
+
+  /*
+  This is a class method and it's purpose is to run all of the registered
+  preparsers. Any given command input can have multiple preparsers run
+  against it and, in each case, this method should return the result of
+  successively calling each preparser on the command input.
+  */
+  runAll(commandInput, parserType) {}
+;
