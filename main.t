@@ -85,4 +85,6 @@ startStory() {
 
 commandLoop() {
   "Entering the command loop ...";
+
+  inputHandler.readInputLine();
 }

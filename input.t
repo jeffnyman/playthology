@@ -52,6 +52,14 @@ inputHandler : object
   context here would be a specific class that provides an input context.
   */
   readInputLineContext(context) {
-    // IMPLEMENT
+    /*
+    There needs to be a loop that keeps executing until the command has
+    been fully read.
+    */
+    for (;;) {
+      inputLineStart(context);
+    }
   }
+
+  inputLineStart(context) {}
 ;
