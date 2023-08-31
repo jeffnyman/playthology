@@ -86,5 +86,12 @@ startStory() {
 commandLoop() {
   "Entering the command loop ...";
 
-  inputHandler.readInputLine();
+  local playerCommand;
+
+  /*
+  The first step is to read a command from the keyboard interface. This
+  is a command that the player would have specified at the command line
+  within the program.
+  */
+  playerCommand = inputHandler.readInputLine();
 }
