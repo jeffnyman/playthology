@@ -3,6 +3,8 @@
 #ifndef PLAYTHOLOGY_H
 #define PLAYTHOLOGY_H
 
+#include <tads.h>
+
 /*
 The following function macro is used to always allow the object representing
 the player character to be identified. Having the macro serves two purposes.

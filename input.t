@@ -28,3 +28,30 @@ class BasicInputContext : InputContext
     self.promptFunction = promptFunction;
   }
 ;
+
+/*
+In the TADS 3 libraries this object is called the "inputManager" whereas
+I refer to it as a more of a "handler." Manager implies a higher-level of
+control or coordination than what is done here. Handler, on the other hand,
+suggests a more focused and specific role of processing.
+*/
+inputHandler : object
+  /*
+  This does exactly what the name of the method sounds like: it reads a
+  line of input from the keyboard interface. The promptFunction can either
+  be the pointer to a function to invoke or it can be a value string that
+  contains the actual prompt to display.
+  */
+  readInputLine(promptFunction?) {
+    return readInputLineContext(new BasicInputContext(promptFunction));
+  }
+
+  /*
+  The idea of this method is to be a contextually-specific input line
+  reader. This is called from a more generic input line reader. The
+  context here would be a specific class that provides an input context.
+  */
+  readInputLineContext(context) {
+    // IMPLEMENT
+  }
+;
