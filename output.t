@@ -36,6 +36,18 @@ class OutputStream : PreinitObject
     */
     filterList = new transient Vector(10);
   }
+
+  /*
+  Here a filter can be added to the filter list. Crucially any element
+  added to this list must be an object of class OutputFilter or, if not
+  that specific class, at least one that implements a filterText() method.
+  Filters are arranged in a stack, which means the last filter added will
+  be the first one called during an output operation. So this method is
+  always adding a new filter to the top of the stack.
+  */
+  addOutputFilter(filter) {
+    filterList.append(filter);
+  }
 ;
 
 /*
