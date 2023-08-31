@@ -56,7 +56,7 @@ is the area where the player receives information about the story world
 and gets updates to that story world based on their actions in it. This
 object must be transient because the output stream is part of the user
 interface being driven by the interpreter as part of the current session.
-This interface is thus not impacted by save and restore operations.
+This interface is thus not impacted by save, restore or undo operations.
 */
 transient storyOutputStream : OutputStream
 ;
@@ -92,6 +92,6 @@ class ParagraphHandler : OutputFilter
 This is the primary handler for story paragraphs. There is no direct
 implementation required here. However, this subclass is defined as
 being transient since it is relevant to any display context in the
-current session, which should extend over save and restore operations.
+current session, which should extend over undo and restore operations.
 */
 transient storyParagraphHandler : ParagraphHandler;
