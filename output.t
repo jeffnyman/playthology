@@ -40,7 +40,7 @@ class OutputStream : PreinitObject
   /*
   Here a filter can be added to the filter list. Crucially any element
   added to this list must be an object of class OutputFilter or, if not
-  that specific class, at least one that implements a filterText() method.
+  that specific class, at least one that implements a applyFilter() method.
   Filters are arranged in a stack, which means the last filter added will
   be the first one called during an output operation. So this method is
   always adding a new filter to the top of the stack.
@@ -59,4 +59,22 @@ interface being driven by the interpreter as part of the current session.
 This interface is thus not impacted by save and restore operations.
 */
 transient storyOutputStream : OutputStream
+;
+
+/*
+This is the base class for applying a specific filter to an output stream.
+The interface defines a filterText() method and that must be present on
+any object that is derived from this class.
+*/
+class OutputFilter : object
+  /*
+  This method is what applies the specific filter. Since this is very
+  specific to whatever the filter mechanism does, this method needs to be
+  overridden in each filter instance. The return value should always be
+  the result of filtering the text. The default implementation is simply
+  to return the text as it was passed in.
+  */
+  applyFilter(outputStream, displayText) {
+    return displayText;
+  }
 ;
