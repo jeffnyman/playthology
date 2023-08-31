@@ -15,6 +15,18 @@ main(args) {
   mainCommon(&begin);
 }
 
+/*
+This is an entry point function that starts a story at a particular state,
+as opposed to the beginning state. The restore state must be provided by a
+"saved state" file, which essentially contains a snapshot of the virtual
+machine memory when the player chose to save that state.
+*/
+mainRestore(args, restoreState) {
+  libContext.cliArgs = args;
+
+  mainCommon(&beginAfterRestore, restoreState);
+}
+
 mainCommon(func, [args]) {
   /*
   This storyStart is another interesting part. It doesn't actually exist

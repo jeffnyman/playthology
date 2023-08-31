@@ -70,6 +70,10 @@ class StoryGame : object
     showLeaving();
   }
 
+  beginAfterResore() {
+    "Story game has begun (from saved state) ...\n";
+  }
+
   /*
   This method is used to show introduction content for the project. An
   empty method is defined here because projects will want to override this
