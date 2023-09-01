@@ -6,6 +6,20 @@ for being able to execute the command.
 */
 class Parser : object
   /*
+  This method is the bread and butter of this class in that it's responsible
+  for parsing and executing a command.
+  */
+  parse(command) {
+    local tokens;
+
+    try {
+      //
+    } catch (TokErrorNoMatch exc) {
+      return;
+    }
+  }
+
+  /*
   As part of parsing, we might need to do special token processing that will
   depend on the type of command. There are separate codes to indicate the
   type of command and these are defined as "sc" types, which are implemented

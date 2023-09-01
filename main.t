@@ -108,6 +108,12 @@ commandLoop() {
       if (playerCommand == nil) {
         continue;
       }
+
+      /*
+      This statement is crucial! This is where the command provided by the
+      player is parsed and executed.
+      */
+      Parser.parse(playerCommand);
     } catch (TerminateCommandException exc) {
       /*
       This exception indicates a syntax error or semantic resolution error
