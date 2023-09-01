@@ -1,3 +1,6 @@
+#charset "utf-8"
+#include "playthology.h"
+
 /*
 This is a core class for the entire library in that it implements the core
 parsing procedure. This means taking a command input from the player and
@@ -13,7 +16,7 @@ class Parser : object
     local tokens;
 
     try {
-      //
+      tokens = commandTokenizer.tokenize(command);
     } catch (TokErrorNoMatch exc) {
       return;
     }
