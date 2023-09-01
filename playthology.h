@@ -22,4 +22,12 @@ but it can be any non-player character as well.
 */
 #define gActor (libContext.currentActor)
 
+/*
+There are certain story commands, prefixed with "sc", that are important to
+the parsing process.
+
+scStandard: parsing a standard command line.
+*/
+enum scStandard;
+
 #endif

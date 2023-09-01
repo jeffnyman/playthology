@@ -12,5 +12,7 @@ class Parser : object
   as enumerations. This method needs to return one of the enumeration codes.
   The "sc" refers to "story command".
   */
-  scType() {}
+  scType() {
+    return scStandard;
+  }
 ;
