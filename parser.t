@@ -16,7 +16,22 @@ class Parser : object
     local tokens;
 
     try {
+      /*
+      The command tokenizer is coming from the language-specific library that
+      Playthology includes. This object hooks into the tokenizing aspects
+      provided by the built-in TADS 3 Tokenizer class.
+      */
       tokens = commandTokenizer.tokenize(command);
+
+      /*
+      The getTokType is provided by the built-in tokens library and returns a
+      token enum value describing the type of the token. In this case, the
+      tokPunct refers to punctuation marks so the goal of this next bit of
+      logic is to remove any terminal punctuation from the command.
+      */
+      while (tokens.length > 0 && getTokType(tokens[tokens.length]) == tokPunct) {
+        tokens = tokens.removeElement(tokens.length);
+      }
     } catch (TokErrorNoMatch exc) {
       return;
     }

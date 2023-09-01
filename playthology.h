@@ -4,6 +4,7 @@
 #define PLAYTHOLOGY_H
 
 #include <tads.h>
+#include <tok.h>
 
 /*
 The following function macro is used to always allow the object representing
