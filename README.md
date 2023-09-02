@@ -6,12 +6,13 @@
 
 <p align="center"><strong>A TADS 3 Adventure Library</strong></p>
 
-
 The goal of this project is to try my hand at creating an adventure game library for the [TADS 3](https://tads.org/) authoring system.
 
 This may seem an odd choice as the TADS ecosystem is largely moribund at the moment. The original author of the system has apparently moved on to other pursuits. That said, there is still a community that plays around with it and creates various adventure games with it.
 
 Thus this project offers little value except that of a pedagogical nature.
+
+Currently the way that this library is being tested is by using my [TADS 3 Playground](https://github.com/jeffnyman/tads3-playground).
 
 Regarding the naming, it's probably fairly clear that "Playthology" is a portmanteau of "play" and "mythology" and I chose this because ... well, I had to call it _something_. That said, I think it does have a nice ring to it and is at least broadly meaningful.
 
