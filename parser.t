@@ -35,6 +35,12 @@ class Parser : object
     } catch (TokErrorNoMatch exc) {
       return;
     }
+
+    try {
+      //
+    } catch (ParseError exc) {
+      //
+    }
   }
 
   /*

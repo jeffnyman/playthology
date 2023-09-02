@@ -19,3 +19,10 @@ further processing a command, this exception is thrown to abandon the
 current command and proceed to the next.
 */
 class TerminateCommandException : Exception;
+
+/*
+When the parser encounters a problem situation, this is the exception
+that will be thrown. More specific parsing error problems can be used
+and derived from this class.
+*/
+class ParseError : Exception;
