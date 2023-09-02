@@ -37,7 +37,12 @@ class Parser : object
     }
 
     try {
-      //
+      /*
+      If there are no tokens, that means an empty command.
+      */
+      if (tokens.length() == 0) {
+        return;
+      }
     } catch (ParseError exc) {
       //
     }
