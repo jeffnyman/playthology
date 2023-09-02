@@ -59,3 +59,18 @@ class Parser : object
     return scStandard;
   }
 ;
+
+/*
+This is the root class for any grammar productions.
+*/
+class Production : object
+;
+
+/*
+A production is an element of a grammar that is composed of smaller parts.
+A Production class is provided that allows for representing the concept of
+grammer production rules. A command production is a subclass of that class
+that acts as a grammar rule for an entire command.
+*/
+class CommandProduction : Production
+;
