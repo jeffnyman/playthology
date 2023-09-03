@@ -54,3 +54,12 @@ grammar commandOnlyConjunction(nonSentenceEnding):
   | ';'
   : Production
 ;
+
+/*
+This is a placeholder to allow for the predicate to be used in the above
+grammar rules. This is actually not something that's done in the original
+libraries because the defined VerbRules -- the macro for which is in the
+library header file -- provide definitions of predicate alternatives.
+Until those are in place, however, the below is needed.
+*/
+grammar predicate(Placeholder): () : Production;
