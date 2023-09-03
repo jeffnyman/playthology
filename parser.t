@@ -9,6 +9,23 @@ for being able to execute the command.
 */
 class Parser : object
   /*
+  The parser may have to ask what's called an "interactive question" to the
+  player. An example of this would be a disambiguation query. Another might
+  be asking to provide a missing noun phrase. Yet another would be a custom
+  question that the author has provided as part of their program.
+  */
+  question = nil
+
+  /*
+  If an error occurred during the parsing of tokens, there will be a certain
+  number of tokens left over that couldn't be parsed. These are referred to
+  as the "leftover" tokens.
+
+  The original library confusingly called this "lastTokens".
+  */
+  leftoverTokens= nil
+
+  /*
   This method is the bread and butter of this class in that it's responsible
   for parsing and executing a command.
   */
@@ -50,6 +67,13 @@ class Parser : object
       If there are no tokens, that means an empty command.
       */
       if (tokens.length() == 0) {
+        /*
+        Since this is an empty command, any previous any previous question
+        or leftover tokens can be considered irrelevant.
+        */
+        question = nil;
+        leftoverTokens = nil;
+
         return;
       }
 
