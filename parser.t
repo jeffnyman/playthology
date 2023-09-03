@@ -118,3 +118,22 @@ that acts as a grammar rule for an entire command.
 */
 class CommandProduction : Production
 ;
+
+/*
+The idea of a "command list" is based around the concept of storing what
+we might call multiple "interpretations" of a command. What this means is
+that we me might a set of potential parsings for a given command input
+with a specific grammar.
+*/
+class CommandList : object
+  /*
+  This property holds a list of the potential command objects.
+  */
+  commands = []
+
+  /*
+  The resolved command refers to the first parsing in the command list,
+  in priority order, that was able to be resolved with no errors.
+  */
+  resolvedCommand = nil
+;
