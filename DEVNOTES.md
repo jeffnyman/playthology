@@ -8,7 +8,9 @@ Adding to the complication, the Adv3Lite library changed a lot of material from 
 
 Yet another complication is that Adv3 library uses a lot of terminology in its comments that are not really covered in the TADS 3 documentation at all. Overall, there is an extreme lack of useful context in how the original library was constructed. Libraries like Adv3Lite, as mentioned above, really just took in these same comments -- even when they no longer applied due to code changes -- and simply perpetuated the obfuscation.
 
-Yet another complication is there are very few coding standards in the TADS 3 libraries. So, for example, you'll see variable definitions defined sometimes at the top of a method, sometimes at the bottom, sometimes interspersed within the code and so on. You also have to deal with what are called "preinit" objects that you need to look for in each module. These often perform some bit of setup that is relevant to the context of the module in question.
+Yet another complication is there are very few coding standards in the TADS 3 libraries. So, for example, you'll see variable definitions defined sometimes at the top of a method, sometimes at the bottom, sometimes interspersed within the code and so on. Sometimes what you're dealing with is not actually a variable at a all but a property. But when just reading the code, that's not obvious without the full context. There's nothing that distinguishes one from the other in many cases.
+
+You also have to deal with what are called "preinit" objects that you need to look for in each module. These often perform some bit of setup that is relevant to the context of the module in question.
 
 In short, a lot of code archaeology is required if you want to build something on top of TADS 3. It makes it a challenge and fun -- and sometimes frustrating -- exercise.
 
