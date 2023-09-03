@@ -36,12 +36,32 @@ class Parser : object
       return;
     }
 
+    /*
+    The assumption during the start of the parsing phase is that we're
+    dealing with the first command.
+    */
+    local firstCommand = true;
+
+    /*
+    This try loop is what is actually going to parse the tokens.
+    */
     try {
       /*
       If there are no tokens, that means an empty command.
       */
       if (tokens.length() == 0) {
         return;
+      }
+
+      /*
+      At this point it's necessary to parse each predicate in the command
+      line. This has to be done until there are no more tokens. If we're
+      starting with the beginning of an entirely new command, then the
+      command line is definitely the start of a sentence. This means we
+      can parse with the firstCommandPhrase.
+      */
+      for (local root = firstCommandPhrase ; tokens.length() != 0;) {
+        //
       }
     } catch (ParseError exc) {
       //
