@@ -29,4 +29,4 @@ Just about everything is persistent but anything _not_ persistent is called tran
 
 A challenge for the parsing is that so much relies on existing objects or definitions that it's very difficult to untangle what needs to be in place, at a bare minimum, to support the parsing. The parser, arguably one of the most important parts of the library, seems to be the part that is documented the worst in terms of how it's actual mechanics tie in with the rest of the library. There are plenty of code comments but their value is marginal in many cases. They are good for seeing how to use the existing parser; less good for seeing how the parser was built and thus how to construct your own.
 
-There is an interesting [TADS Parser Manual](http://www.tads.org/t2doc/doc/parser.htm) but that's for TADS 2, not TADS 3, and thus I'm not sure how useful it is.
+There is an interesting [TADS Parser Manual](http://www.tads.org/t2doc/doc/parser.htm) but that's for TADS 2, not TADS 3, and thus I'm not sure how useful it is. At least some of that seems to be covered, to much less of an extent, for TADS 3 in the [Command Execution Cycle](http://www.tads.org/t3doc/doc/techman/t3cycle.htm).
