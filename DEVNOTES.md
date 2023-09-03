@@ -24,3 +24,7 @@ All of this is documented extremely poorly in the official TADS documentation.
 A challenge in general is that the virtual machine of TADS 3 has a series of persistence mechanisms. These are around the features of saving, restoring and restarting a game. (Also included is the ability to undo an action.) The idea is that whole sets of objects can outlive a particular session of the virtual machine.
 
 Just about everything is persistent but anything _not_ persistent is called transient. Transient objects essentially only last for the current session of the virtual machine but, crucially, they do not get changed during restore or undo operations, unlike persistent objects. 
+
+----
+
+A challenge for the parsing is that so much relies on existing objects or definitions that it's very difficult to untangle what needs to be in place, at a bare minimum, to support the parsing. The parser, arguably one of the most important parts of the library, seems to be the part that is documented the worst in terms of how it's actual mechanics tie in with the rest of the library. There are plenty of code comments but their value is marginal in many cases. They are good for seeing how to use the existing parser; less good for seeing how the parser was built and thus how to construct your own.
