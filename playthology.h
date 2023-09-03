@@ -31,4 +31,12 @@ scStandard: parsing a standard command line.
 */
 enum scStandard;
 
+/*
+The idea of a "verb rule" is that it starts the definition of a verb grammar
+rule. The tag is a name that identifies the particular rule since there will
+be many verb rules. Having a tagged name for each verb rule allows the author
+to use the TADS 3 replace and modify mechanisms.
+*/
+#define VerbRule(tag) grammar predicate(tag);
+
 #endif
