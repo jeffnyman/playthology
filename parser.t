@@ -85,7 +85,15 @@ class Parser : object
       can parse with the firstCommandPhrase.
       */
       for (local root = firstCommandPhrase ; tokens.length() != 0;) {
-        //
+        /*
+        There can be commands that have been parsed so far so we start
+        with nothing.
+        */
+        local commandList = nil;
+
+        if (commandList == nil || commandList.commands == nil) {
+          commandList = new CommandList();
+        }
       }
     } catch (ParseError exc) {
       //
